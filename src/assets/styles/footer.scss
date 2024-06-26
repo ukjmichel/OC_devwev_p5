@@ -1,0 +1,15 @@
+#footer{
+    height: 209px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    span{
+        text-align: center;
+        width: 130px;
+        color: white;  
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}

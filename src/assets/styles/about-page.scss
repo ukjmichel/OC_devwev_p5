@@ -1,0 +1,24 @@
+@import "./index.scss";
+
+
+#about-page{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    .about-banner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 111px;
+        width: 100%;
+        border-radius: 10px ;
+        overflow: hidden;
+        
+        filter: brightness(80%);
+        img{
+            width: 100%;
+        }
+    }
+    
+}

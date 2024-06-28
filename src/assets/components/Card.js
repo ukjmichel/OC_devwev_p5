@@ -1,6 +1,10 @@
-import "../styles/contener.scss";
+
+import "../styles/card-contener.scss"
+
 
 const Card = ({locationTitle = "Titre de la location"}) => {
+  
+  
   return (
     <article>
       <div>
@@ -10,3 +14,5 @@ const Card = ({locationTitle = "Titre de la location"}) => {
   );
 }
 export default Card
+
+

@@ -1,13 +1,14 @@
-import Card from "./Card";
-import "../styles/contener.scss";
-import Hero from "./Hero";
+import "../styles/card-contener.scss"
+import Card from "./Card"
 
 const CardContener = () => {
   return (
-    <section id="contener">
-      <Hero />
+    <div id="card-contener">
       <Card />
-    </section>
+      <Card />
+      <Card />
+      <Card />
+    </div>
   );
-};
-export default CardContener;
+}
+export default CardContener

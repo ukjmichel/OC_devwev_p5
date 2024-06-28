@@ -1,0 +1,36 @@
+@import "index.scss";
+
+#error-page-not-found{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 500px;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    h1{
+        font-weight: 700;
+        font-size: 96px;
+        color: $primary-color;
+    }
+    p{
+        font-weight: 500;
+        font-size: 18px;
+        color: $primary-color;
+
+        line-height: 1.5;
+
+    }
+    .nav-link{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.4;
+        text-decoration: underline;
+    }
+}
+
+/* Retourner sur la page d’accueil */
+
+

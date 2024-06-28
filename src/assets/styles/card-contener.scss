@@ -1,0 +1,44 @@
+@import "./index.scss";
+
+#card-contener{
+    display: flex;
+    flex-direction: column;
+    //height: 805px;
+    gap: 20px;
+    //overflow: scroll;
+    article {
+        
+    height: 255px;
+    background-color: $primary-color;
+    border-radius: 10px;
+    gap: 20px;
+    div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(10, 10, 10, 0) 42%,
+        rgba(4, 4, 4, 0.205) 99.99%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+      h2 {
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.4;
+        margin: 20px;
+        width: 100px;
+      }
+    }
+  }
+
+  @media (min-width: 768px){
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}

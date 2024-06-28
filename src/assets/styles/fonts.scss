@@ -2,7 +2,7 @@
 
 @include Montserrat.faces(
   $family: "Montserrat", // Font family name
-  $weights: (300, 500, 700), // Specify weight 500
+  $weights: (300, 400, 500, 700), // Specify weight 500
   $subsets: latin, // Include the "latin" subset for basic Latin characters (optional)
   $display: swap  // Optional: Adjust font display behavior if needed
 );

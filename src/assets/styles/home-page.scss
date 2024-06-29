@@ -24,8 +24,24 @@
       color: white;
       font-size: 24px;
       font-weight: 700;
+      line-height: 1.4;
       width: 225px;
       margin: 10px;
     }
   }
+  @media (min-width: 768px){
+    .banner{
+      div{
+        justify-content: center;
+      }
+       h2{
+        width:fit-content ;
+        font-size: 24px;
+       }
+    }
+  }
 }
+
+/* Chez vous, partout et ailleurs */
+
+

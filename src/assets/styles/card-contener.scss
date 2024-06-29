@@ -39,6 +39,10 @@
   @media (min-width: 768px){
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    background-color: $bg-color;
+    padding: 20px;
+    border-radius: 10px 10px 5px 5px;
   }
 
 }
+

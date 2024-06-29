@@ -2,9 +2,6 @@
 
 
 #about-page{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     padding: 20px;
     .about-banner{
         display: flex;
@@ -19,6 +16,22 @@
         img{
             width: 100%;
         }
+        
     }
+
+    .about-content{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+               
+            }
+    @media (min-width:768px){
+            .about-content{
+                padding: 0 50px;
+               
+            }
+        }
+    
     
 }

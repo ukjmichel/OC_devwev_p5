@@ -23,8 +23,8 @@ const CollapseCard = () => {
       <div
         className={
           isCardCollapse
-            ? "about-card-content content--colapse"
-            : "about-card-content content--test"
+            ? "about-card-content content--open"
+            : "about-card-content content--close"
         }
       >
         <p>

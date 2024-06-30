@@ -45,13 +45,11 @@
     }
   }
   .content {
-    &--collapse {
-      transform: translateY(100%);
-
+    &--open {
+      animation: open-card 0.2s ease-in forwards;
     }
-    &--test {
-      transform: translateY(-100%);
-      max-height: 0;
+    &--close {
+      animation: close-card 0.3s ease-in forwards;
     }
   }
 }
@@ -62,6 +60,24 @@
   &--colapse {
     transform: rotate(0deg);
   }
- 
 }
 
+@keyframes open-card {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+    max-height: 100px;
+  }
+}
+
+@keyframes close-card {
+  from {
+    max-height: 100px;
+  }
+
+  to {
+    max-height: 0;
+  }
+}

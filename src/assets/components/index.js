@@ -2,7 +2,7 @@ import Layout from "./Layout";
 import Header from "./Header";
 import Footer from "./Footer";
 import CardContener from "./CardContener";
-import LocationFilter from "./LocationFilter";
+import LocationTags from "./LocationTags";
 import LocationScore from "./LocationScore";
 import CollapseCard from "./CollapseCard";
 import LocationAvatar from "./LocationAvatar";
@@ -15,7 +15,7 @@ export {
   Header,
   Footer,
   CardContener,
-  LocationFilter,
+  LocationTags,
   LocationScore,
   CollapseCard,
   LocationAvatar,

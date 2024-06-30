@@ -26,18 +26,18 @@
       line-height: 1.4;
     }
   }
-  .location-filter {
+  .location-tag {
     display: flex;
     gap: 10px;
     margin: 10px 0;
     button {
-      width: 84px;
       height: 18px;
       border-radius: 5px;
       font-size: 10px;
       color: white;
       background-color: $primary-color;
       border: none;
+      padding: 0 10px ;
     }
   }
   .location-score {
@@ -58,7 +58,7 @@
       width: 100px;
       text-align: right;
     }
-    div {
+    img {
       height: 32px;
       width: 32px;
       background-color: $bg-dark;
@@ -91,6 +91,9 @@
     .display-desktop {
       display: flex;
     }
+    figure {
+    height: 415px;
+  }
     .location-detail{
       display: grid;
       grid-template-columns: 1fr 1fr; 

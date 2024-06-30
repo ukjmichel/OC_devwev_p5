@@ -1,10 +1,32 @@
 import CollapseCard from "./CollapseCard";
 
-const LocationDetail = () => {
+
+const ListElement = ({ items = [] }) => {
+ 
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li> // Ideally use a unique id instead of the index in real-world apps
+      ))}
+    </ul>
+  );
+};
+
+
+
+const LocationDetail = ({ description, equipments }) => {
+
   return (
     <div className="location-detail">
-      <CollapseCard />
-      <CollapseCard />
+      <div>
+        <CollapseCard content={description} title="description" />
+      </div>
+      <div>
+        <CollapseCard
+          content={<ListElement items={equipments} />}
+          title="équipements"
+        />
+      </div>
     </div>
   );
 };

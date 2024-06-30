@@ -40,11 +40,12 @@
     font-weight: 400;
     line-height: 1.2;
     transition: transform 0.3s ease-out;
-    p {
+    div {
       margin: 10px;
     }
   }
   .content {
+    max-height:  0;
     &--open {
       animation: open-card 0.2s ease-in forwards;
     }

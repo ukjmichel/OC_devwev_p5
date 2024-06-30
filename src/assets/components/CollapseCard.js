@@ -2,15 +2,17 @@ import { useState } from "react";
 import collapseBtn from "../images/arrow.svg";
 import "../styles/collapse-card.scss";
 
-const CollapseCard = () => {
+const CollapseCard = ({content, title="title"}) => {
   const [isCardCollapse, setIsCardCollapse] = useState(false);
+  const [isInit, setIsInit] = useState(true);
   const toggleButton = () => {
     setIsCardCollapse(!isCardCollapse);
+    setIsInit(false);
   };
   return (
     <article className="about-card">
       <div className="about-card-header">
-        <h2>Title</h2>
+        <h2>{title}</h2>
         <img
           src={collapseBtn}
           alt="collapse btn"
@@ -24,15 +26,14 @@ const CollapseCard = () => {
         className={
           isCardCollapse
             ? "about-card-content content--open"
+            : isInit
+            ? "about-card-content content"
             : "about-card-content content--close"
         }
       >
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem
-          dolorum animi assumenda harum ex corrupti, officiis quod quis minus
-          aut quae. Similique cum sapiente accusantium cupiditate quo illo
-          beatae blanditiis?
-        </p>
+        <div>
+          {content}
+        </div>
       </div>
     </article>
   );

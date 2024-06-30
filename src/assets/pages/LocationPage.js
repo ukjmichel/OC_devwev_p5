@@ -2,44 +2,50 @@ import {
   Layout,
   LocationAvatar,
   LocationDetail,
-  LocationFilter,
+  LocationTags,
   LocationScore,
 } from "../components";
 import "../styles/location-page.scss";
-import prewiew from "../images/appart.jpg";
+import data from "../../data.json"
+import { useParams } from "react-router-dom";
+
 
 const LocationPage = () => {
+   const { id } = useParams();
+   const locationData = data.filter(item=>item.id===id)[0]
+   const { cover, title, description, location, equipments,tags,host } = locationData;
+console.log(locationData)
   return (
     <Layout>
       <section id="location-page">
         <figure>
-          <img src={prewiew} alt="prewiew of a location" />
+          <img src={cover} alt="prewiew of a location" />
         </figure>
         <div className="location-content display-mobile">
           <div className="location-name">
-            <h1>Paris center, on the romantic Canal Saint-Martin</h1>
-            <p>Paris, île-de-France</p>
+            <h1>{title}</h1>
+            <p>{location}</p>
           </div>
-          <LocationFilter />
+          <LocationTags tags={tags} />
           <div className="flex-1">
             <LocationScore />
-            <LocationAvatar />
+            <LocationAvatar name={host.name} picture={host.picture} />
           </div>
-          <LocationDetail />
+          <LocationDetail description={description} equipments={equipments} />
         </div>
         <div className="location-content display-desktop">
           <div className="flex-1">
             <div className="location-name">
-              <h1>Paris center, on the romantic Canal Saint-Martin</h1>
-              <p>Paris, île-de-France</p>
+              <h1>{title}</h1>
+              <p>{location}</p>
             </div>
-            <LocationAvatar />
+            <LocationAvatar name={host.name} picture={host.picture} />
           </div>
           <div className="flex-1">
-            <LocationFilter />
+            <LocationTags tags={tags} />
             <LocationScore />
           </div>
-          <LocationDetail />
+          <LocationDetail description={description} equipments={equipments} />
         </div>
       </section>
     </Layout>

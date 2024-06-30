@@ -1,9 +1,11 @@
-
-import { Layout,CardContener } from "../components";
+import { Layout, CardContener } from "../components";
 import "../styles/home-page.scss";
+import data from "../../data.json";
 
 const HomePage = () => {
+
   return (
+    
     <>
       <Layout>
         <section id="home-page">
@@ -12,7 +14,7 @@ const HomePage = () => {
               <h2>Chez vous, partout et ailleurs</h2>
             </div>
           </div>
-          <CardContener />
+          <CardContener data={data}/>
         </section>
       </Layout>
     </>

@@ -13,7 +13,6 @@ const ListElement = ({ items = [] }) => {
 };
 
 
-
 const LocationDetail = ({ description, equipments }) => {
 
   return (

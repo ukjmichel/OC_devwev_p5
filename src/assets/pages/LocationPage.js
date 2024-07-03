@@ -4,23 +4,23 @@ import {
   LocationDetail,
   LocationTags,
   LocationScore,
+  Carousel,
 } from "../components";
 import "../styles/location-page.scss";
-import data from "../../data.json"
+import data from "../../data.json";
 import { useParams } from "react-router-dom";
 
-
 const LocationPage = () => {
-   const { id } = useParams();
-   const locationData = data.filter(item=>item.id===id)[0]
-   const { cover, title, description, location, equipments,tags,host } = locationData;
-console.log(locationData)
+  const { id } = useParams();
+  const locationData = data.filter((item) => item.id === id)[0];
+  const {  title, description, location, equipments, tags, host,pictures } =
+    locationData;
+
   return (
     <Layout>
       <section id="location-page">
-        <figure>
-          <img src={cover} alt="prewiew of a location" />
-        </figure>
+        <Carousel images={pictures} />
+
         <div className="location-content display-mobile">
           <div className="location-name">
             <h1>{title}</h1>
@@ -33,6 +33,7 @@ console.log(locationData)
           </div>
           <LocationDetail description={description} equipments={equipments} />
         </div>
+
         <div className="location-content display-desktop">
           <div className="flex-1">
             <div className="location-name">

@@ -7,6 +7,8 @@ import LocationScore from "./LocationScore";
 import CollapseCard from "./CollapseCard";
 import LocationAvatar from "./LocationAvatar";
 import LocationDetail from "./LocationDetail";
+import Carousel from "./Carousel";
+
 
 
 
@@ -20,4 +22,5 @@ export {
   CollapseCard,
   LocationAvatar,
   LocationDetail,
+  Carousel,
 };

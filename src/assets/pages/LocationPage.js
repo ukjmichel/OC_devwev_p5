@@ -4,6 +4,7 @@ import {
   LocationDetail,
   LocationTags,
   LocationScore,
+  Carousel,
 } from "../components";
 import "../styles/location-page.scss";
 import data from "../../data.json";
@@ -14,7 +15,7 @@ const LocationPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [isDataExist, setIsDataExist] = useState(false);
-  
+
   const locationData = data.filter((item) => item.id === id)[0];
 
   useEffect(() => {
@@ -27,15 +28,21 @@ const LocationPage = () => {
   }, [locationData, navigate]);
 
   if (isDataExist) {
-    const { cover, title, description, location, equipments, tags, host } =
-      locationData;
+    const {
+      cover,
+      title,
+      description,
+      location,
+      equipments,
+      tags,
+      host,
+      pictures,
+    } = locationData;
 
     return (
       <Layout>
         <section id="location-page">
-          <figure>
-            <img src={cover} alt="prewiew of a location" />
-          </figure>
+          <Carousel images={pictures} />
 
           <div className="location-content display-mobile">
             <div className="location-name">

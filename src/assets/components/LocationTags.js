@@ -3,8 +3,6 @@ const LocationTag = ({tag}) => {
 };
 
 const LocationTags = ({tags}) => {
-
-
   return (
     <div className="location-tag">
       {tags.map((tag,index) => (

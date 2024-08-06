@@ -30,6 +30,7 @@ const LocationPage = () => {
   if (isDataExist) {
     const {
       cover,
+      rating,
       title,
       description,
       location,
@@ -51,7 +52,7 @@ const LocationPage = () => {
             </div>
             <LocationTags tags={tags} />
             <div className="flex-1">
-              <LocationScore />
+              <LocationScore rating={rating} />
               <LocationAvatar name={host.name} picture={host.picture} />
             </div>
             <LocationDetail description={description} equipments={equipments} />
@@ -67,7 +68,7 @@ const LocationPage = () => {
             </div>
             <div className="flex-1">
               <LocationTags tags={tags} />
-              <LocationScore />
+              <LocationScore rating={rating} />
             </div>
             <LocationDetail description={description} equipments={equipments} />
           </div>

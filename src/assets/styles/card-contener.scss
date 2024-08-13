@@ -13,8 +13,8 @@
     overflow: hidden;
     img {
       height: 100%;
-      width: 100%;
       display: flex;
+      align-items: center;
       flex-direction: column;
       justify-content: end;
     }
@@ -39,6 +39,7 @@
         font-weight: 700;
         line-height: 1.4;
         margin: 20px;
+        max-width: 200px;
         width: 70%;
       }
     }

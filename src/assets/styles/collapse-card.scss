@@ -15,8 +15,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 30px;
     width: 100%;
+    padding: 10px 0 10px 0;
     background-color: $primary-color;
     border-radius: 5px;
     z-index: 10;
@@ -45,12 +45,19 @@
     }
   }
   .content {
-    max-height:  0;
+    max-height: 0;
     &--open {
       animation: open-card 0.2s ease-in forwards;
     }
     &--close {
       animation: close-card 0.3s ease-in forwards;
+    }
+  }
+  @media (min-width: 768px) {
+    .about-card-header {
+      h2 {
+        font-size: 24px;
+      }
     }
   }
 }

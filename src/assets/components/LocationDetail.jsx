@@ -1,8 +1,6 @@
 import CollapseCard from "./CollapseCard";
 
-
 const ListElement = ({ items = [] }) => {
- 
   return (
     <ul>
       {items.map((item, index) => (
@@ -12,18 +10,16 @@ const ListElement = ({ items = [] }) => {
   );
 };
 
-
 const LocationDetail = ({ description, equipments }) => {
-
   return (
     <div className="location-detail">
       <div>
-        <CollapseCard content={description} title="description" />
+        <CollapseCard content={description} title="Description" />
       </div>
       <div>
         <CollapseCard
           content={<ListElement items={equipments} />}
-          title="équipements"
+          title="Equipements"
         />
       </div>
     </div>

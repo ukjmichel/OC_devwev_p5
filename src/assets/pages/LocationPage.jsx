@@ -45,31 +45,14 @@ const LocationPage = () => {
         <section id="location-page">
           <Carousel images={pictures} />
 
-          <div className="location-content display-mobile">
+          <div className="location-content">
             <div className="location-name">
               <h1>{title}</h1>
               <p>{location}</p>
             </div>
             <LocationTags tags={tags} />
-            <div className="flex-1">
-              <LocationScore rating={rating} />
-              <LocationAvatar name={host.name} picture={host.picture} />
-            </div>
-            <LocationDetail description={description} equipments={equipments} />
-          </div>
-
-          <div className="location-content display-desktop">
-            <div className="flex-1">
-              <div className="location-name">
-                <h1>{title}</h1>
-                <p>{location}</p>
-              </div>
-              <LocationAvatar name={host.name} picture={host.picture} />
-            </div>
-            <div className="flex-1">
-              <LocationTags tags={tags} />
-              <LocationScore rating={rating} />
-            </div>
+            <LocationScore rating={rating} />
+            <LocationAvatar name={host.name} picture={host.picture} />
             <LocationDetail description={description} equipments={equipments} />
           </div>
         </section>

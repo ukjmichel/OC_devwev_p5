@@ -1,0 +1,10 @@
+#layout {
+  padding: 0 20px 0 20px;
+  div {
+    max-width: 1240px;
+    margin: auto;
+  }
+  @media (min-width: 768px) {
+    padding: 0 40px 0 40px;
+  }
+}

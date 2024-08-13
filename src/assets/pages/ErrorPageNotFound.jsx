@@ -1,4 +1,4 @@
-import Layout from "../components/Layout.js";
+import Layout from "../components/Layout.jsx";
 import "../styles/error-page.scss";
 import { Link } from "react-router-dom";
 

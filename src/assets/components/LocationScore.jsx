@@ -1,25 +1,8 @@
-import starFill from "../images/star_fill.svg";
-import starEmpty from "../images/star_empty.svg";
-
-const StarFill = () => {
-  return (
-    <>
-      <img src={starFill} alt="1 star" />
-    </>
-  );
-};
-
-const StarEmpty = () => {
-  return (
-    <>
-      <img src={starEmpty} alt="0 star" />
-    </>
-  );
-};
+import StarFill from "./StarFill";
+import StarEmpty from "./StarEmpty";
 
 const LocationScore = ({ rating }) => {
   const locationRating = Number(rating);
-  console.log(locationRating);
   const renderStars = () => {
     const stars = [];
     for (let i = 0; i < 5; i++) {

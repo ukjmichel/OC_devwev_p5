@@ -1,58 +1,77 @@
 @import "./index.scss";
 
 .carousel {
-  position: relative;
+  aspect-ratio: 1/1;
   width: 100%;
-  height: 255px;
+  position: relative;
   margin: auto;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 768px){
+  .carousel-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  .carousel-images {
+    display: flex;
+    height: 100%;
+  }
+  .carousel-image {
+    min-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    img {
+      height: 24px;
+    }
+  }
+
+  .arrow.left {
+    left: 10px;
+  }
+
+  .arrow.right {
+    right: 10px;
+  }
+
+  @media (min-width: 768px) {
     height: 415px;
+    .arrow {
+      img {
+        height: 48px;
+      }
+    }
   }
 }
 
-.carousel-container {
+.carousel-count {
+  display: none;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.carousel-images {
-  display: flex;
-  height: 100%; /* Ensure full height for centering */
-}
-
-.carousel-image {
-  min-width: 100%;
-  height: auto;
-  max-height: 100%; /* Ensure the image scales down to fit the height */
-  object-fit: cover; /* Ensure the image covers the container */
-  display: flex;
-  align-items: center; /* Center image vertically */
-  justify-content: center; /* Center image horizontally */
-}
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
+  text-align: center;
   color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1;
-}
+  position: relative;
+  bottom: 40px;
 
-.arrow.left {
-  left: 10px;
+  @media (min-width: 768px) {
+    display: block;
+  }
 }
-
-.arrow.right {
-  right: 10px;
-}
-

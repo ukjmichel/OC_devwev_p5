@@ -7,13 +7,26 @@
     height: 255px;
     overflow: hidden;
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: (1, 1);
     align-items: center;
     img {
       width: 100%;
     }
   }
+  .location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal columns */
+    grid-template-areas:
+      "item1 item1"
+      "item2 item2"
+      "item3 item4"
+      "item5 item5";
+    gap: 10px;
+    margin: 10px 0;
+  }
   .location-name {
+    grid-area: item1;
     display: flex;
     flex-direction: column;
     h1,
@@ -25,22 +38,19 @@
       font-weight: 500;
       line-height: 1.4;
     }
+    p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
   }
-  .location-tag {
+  .location-tags {
+    grid-area: item2;
     display: flex;
     gap: 10px;
     margin: 10px 0;
-    button {
-      height: 18px;
-      border-radius: 5px;
-      font-size: 10px;
-      color: white;
-      background-color: $primary-color;
-      border: none;
-      padding: 0 10px ;
-    }
   }
   .location-score {
+    grid-area: item3;
     display: flex;
     gap: 5px;
     img {
@@ -48,9 +58,12 @@
     }
   }
   .location-avatar {
+    grid-area: item4;
     display: flex;
+    justify-content: flex-end;
     gap: 10px;
-    h3 {
+
+    p {
       font-size: 12px;
       color: $primary-color;
       font-weight: 500;
@@ -66,37 +79,62 @@
     }
   }
   .location-detail {
+    grid-area: item5;
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin: 10px 0;
   }
-  .location-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 10px 0;
-  }
-  .flex-1 {
-    display: flex;
-    justify-content: space-between;
-  }
-  .display-desktop {
-    display: none;
-  }
+
   @media (min-width: 768px) {
-    .display-mobile {
-      display: none;
+    .location-content {
+      grid-template-areas:
+        "item1 item2"
+        "item3 item4"
+        "item5 item5";
     }
+    .location-name {
+      grid-area: item1;
+      h1 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 26px;
+      }
+    }
+
     .display-desktop {
       display: flex;
     }
     figure {
-    height: 415px;
-  }
-    .location-detail{
+      height: 415px;
+    }
+    .location-avatar {
+      grid-area: item2;
+      p {
+        font-size: 18px;
+      }
+      img {
+        height: 64px;
+        width: 64px;
+        background-color: $bg-dark;
+        border-radius: 50%;
+      }
+    }
+    .location-tags {
+      grid-area: item3;
+    }
+    .location-score {
+      grid-area: item4;
+      justify-content: end;
+      img {
+        height: 24px;
+      }
+    }
+    .location-detail {
+      grid-area: item5;
       display: grid;
-      grid-template-columns: 1fr 1fr; 
+      grid-template-columns: 1fr 1fr;
       gap: 40px;
     }
   }

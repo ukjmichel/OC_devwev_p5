@@ -1,23 +1,30 @@
 @import "./index.scss";
 
-#card-contener{
-    display: flex;
-    flex-direction: column;
-    //height: 805px;
-    gap: 20px;
-    //overflow: scroll;
-    article {
-        
-    height: 255px;
+#card-contener {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 25px;
+
+  article {
+    aspect-ratio: 1 / 1;
     background-color: $primary-color;
     border-radius: 10px;
-    gap: 20px;
-    div {
+    overflow: hidden;
+    img {
       height: 100%;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: end;
+    }
+    div {
+      display: flex;
+      position: relative;
+      bottom: 100%;
+      height: 100%;
+      width: 100%;
+      align-items: end;
       background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0) 0%,
@@ -25,24 +32,24 @@
         rgba(4, 4, 4, 0.205) 99.99%,
         rgba(0, 0, 0, 0.5) 100%
       );
+
       h2 {
         color: white;
         font-size: 18px;
         font-weight: 700;
         line-height: 1.4;
         margin: 20px;
-        width: 50%;
+        width: 70%;
       }
     }
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
     background-color: $bg-color;
-    padding: 20px;
-    border-radius: 10px 10px 5px 5px;
+    padding: 5%;
+    border-radius: 25px;
   }
-
 }
-

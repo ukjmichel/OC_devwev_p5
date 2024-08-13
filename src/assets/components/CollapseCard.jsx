@@ -2,7 +2,7 @@ import { useState } from "react";
 import collapseBtn from "../images/arrow.svg";
 import "../styles/collapse-card.scss";
 
-const CollapseCard = ({content, title="title"}) => {
+const CollapseCard = ({ content, title = "title" }) => {
   const [isCardCollapse, setIsCardCollapse] = useState(false);
   const [isInit, setIsInit] = useState(true);
   const toggleButton = () => {
@@ -31,9 +31,7 @@ const CollapseCard = ({content, title="title"}) => {
             : "about-card-content content--close"
         }
       >
-        <div>
-          {content}
-        </div>
+        <div>{content}</div>
       </div>
     </article>
   );

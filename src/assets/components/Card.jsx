@@ -1,7 +1,7 @@
 import "../styles/card-contener.scss";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({id,title}) => {
+const Card = ({ id, title, cover }) => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/location/${id}`);
@@ -9,6 +9,7 @@ const Card = ({id,title}) => {
 
   return (
     <article onClick={handleClick}>
+      <img src={cover} />
       <div>
         <h2>{title}</h2>
       </div>
@@ -16,12 +17,4 @@ const Card = ({id,title}) => {
   );
 };
 
-const CardContener = ({data}) => {
- 
-  return (
-    <div id="card-contener">
-      {data.map(({id,title})=><Card key={id} id={id} title={title}/>)}
-    </div>
-  );
-};
-export default CardContener;
+export default Card;

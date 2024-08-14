@@ -1,15 +1,5 @@
 import CollapseCard from "./CollapseCard";
 
-const ListElement = ({ items = [] }) => {
-  return (
-    <ul>
-      {items.map((item, index) => (
-        <li key={index}>{item}</li> // Ideally use a unique id instead of the index in real-world apps
-      ))}
-    </ul>
-  );
-};
-
 const LocationDetail = ({ description, equipments }) => {
   return (
     <div className="location-detail">
@@ -18,7 +8,13 @@ const LocationDetail = ({ description, equipments }) => {
       </div>
       <div>
         <CollapseCard
-          content={<ListElement items={equipments} />}
+          content={
+            <ul>
+              {equipments.map((item, index) => (
+                <li key={index}>{item}</li> // Ideally use a unique id instead of the index in real-world apps
+              ))}
+            </ul>
+          }
           title="Equipements"
         />
       </div>

@@ -7,57 +7,75 @@ import {
   Carousel,
 } from "../components";
 import "../styles/location-page.scss";
-import data from "../../data.json";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const LocationPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [isDataExist, setIsDataExist] = useState(false);
-
-  const locationData = data.filter((item) => item.id === id)[0];
+  const [locationData, setLocationData] = useState(null); // State to store specific location data
+  const [loading, setLoading] = useState(true); // State to manage loading state
+  const [error, setError] = useState(null); // State to store any error
 
   useEffect(() => {
-    if (!locationData) {
-      // Redirect to the `/error` route if the `id` is invalid
-      navigate("/error_page_not_found");
-    } else {
-      setIsDataExist(true);
-    }
-  }, [locationData, navigate]);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data.json");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        const foundLocationData = data.find((item) => item.id === id);
+        if (!foundLocationData) {
+          navigate("/error_page_not_found");
+        } else {
+          setLocationData(foundLocationData); // Set specific location data
+        }
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false); // Set loading to false once data is fetched or in case of error
+      }
+    };
 
-  if (isDataExist) {
-    const {
-      cover,
-      rating,
-      title,
-      description,
-      location,
-      equipments,
-      tags,
-      host,
-      pictures,
-    } = locationData;
+    fetchData();
+  }, [id, navigate]);
 
-    return (
-      <Layout>
-        <section id="location-page">
-          <Carousel images={pictures} />
+  // Conditional rendering based on state
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  if (!locationData) return <p>Location not found.</p>; // Fallback if no location data
 
-          <div className="location-content">
-            <div className="location-name">
-              <h1>{title}</h1>
-              <p>{location}</p>
-            </div>
-            <LocationTags tags={tags} />
-            <LocationScore rating={rating} />
-            <LocationAvatar name={host.name} picture={host.picture} />
-            <LocationDetail description={description} equipments={equipments} />
+  const {
+    cover,
+    rating,
+    title,
+    description,
+    location,
+    equipments,
+    tags,
+    host,
+    pictures,
+  } = locationData;
+
+  return (
+    <Layout>
+      <section id="location-page">
+        <Carousel images={pictures} />
+
+        <div className="location-content">
+          <div className="location-name">
+            <h1>{title}</h1>
+            <p>{location}</p>
           </div>
-        </section>
-      </Layout>
-    );
-  }
+          <LocationTags tags={tags} />
+          <LocationScore rating={rating} />
+          <LocationAvatar name={host.name} picture={host.picture} />
+          <LocationDetail description={description} equipments={equipments} />
+        </div>
+      </section>
+    </Layout>
+  );
 };
+
 export default LocationPage;

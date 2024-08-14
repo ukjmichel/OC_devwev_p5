@@ -3,12 +3,9 @@
 .about-card {
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
   overflow: hidden;
   background-color: $bg-color;
-  margin: -10px 0;
-  border-top: solid 10px white;
-  border-bottom: solid 10px white;
+  border-radius: 10px;
 
   .about-card-header {
     position: relative;
@@ -33,6 +30,9 @@
       margin-right: 10px;
       transition: all 0.2s ease-in;
     }
+    .card-text {
+      font-size: 12px;
+    }
   }
   .about-card-content {
     position: relative;
@@ -46,8 +46,10 @@
   }
   .content {
     max-height: 0;
+
     &--open {
       animation: open-card 0.2s ease-in forwards;
+      padding-bottom: 10px;
     }
     &--close {
       animation: close-card 0.3s ease-in forwards;
@@ -58,6 +60,9 @@
       h2 {
         font-size: 24px;
       }
+    }
+    .card-text {
+      font-size: 18px;
     }
   }
 }
@@ -76,13 +81,13 @@
   }
   to {
     transform: translateY(0);
-    max-height: 100px;
+    max-height: 200px;
   }
 }
 
 @keyframes close-card {
   from {
-    max-height: 100px;
+    max-height: 200px;
   }
 
   to {

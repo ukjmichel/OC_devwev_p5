@@ -31,7 +31,7 @@ const CollapseCard = ({ content, title = "title" }) => {
             : "about-card-content content--close"
         }
       >
-        <div>{content}</div>
+        <div className="card-text">{content}</div>
       </div>
     </article>
   );
